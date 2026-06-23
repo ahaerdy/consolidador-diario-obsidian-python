@@ -1,4 +1,4 @@
-# consolidador-diario-obsidian-python
+# Consolidado Diário Obsidian (Python)
 
 **Breve descrição:** Um script Python para consolidar métricas e informações de notas diárias do Obsidian, extraindo dados do frontmatter e gerando um arquivo de texto unificado.
 
