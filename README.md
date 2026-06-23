@@ -20,7 +20,7 @@ Script Python para extrair e consolidar automaticamente os metadados (frontmatte
 
 ## Contexto e Motivação
 
-O [Obsidian](https://obsidian.md/) é um editor de notas baseado em Markdown com suporte a um sistema de **diário diário (Daily Notes)**, onde cada dia recebe um arquivo `.md` próprio. É comum enriquecer essas notas com um bloco de metadados chamado **frontmatter YAML** — um cabeçalho estruturado no início de cada arquivo que registra métricas pessoais como nível de energia, sono, foco, humor, decisões, insights, entre outros.
+O [Obsidian](https://obsidian.md/) é um editor de notas baseado em Markdown com suporte a um sistema de **diário (Daily Notes)**, onde cada dia recebe um arquivo `.md` próprio. É comum enriquecer essas notas com um bloco de metadados chamado **frontmatter YAML** — um cabeçalho estruturado no início de cada arquivo que registra métricas pessoais como nível de energia, sono, foco, humor, decisões, insights, entre outros.
 
 O problema: esses dados ficam espalhados em centenas de arquivos. Analisá-los de forma agregada — seja por olhar humano, seja passando para uma IA — exige uma ferramenta de consolidação.
 
