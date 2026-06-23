@@ -276,7 +276,7 @@ Data: 20260202
 **Melhorias planejadas:**
 - [ ] Exportação para CSV (útil para análise em planilhas)
 - [ ] Suporte a saída em JSON estruturado
-- [ ] Modo de análise estatística básica (médias de energia, sono, foco)
+- [ ] Modo de análise estatística básica (médias das métricas mensuráveis)
 - [ ] Parser YAML robusto com `PyYAML`
 
 ---
