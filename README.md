@@ -59,7 +59,7 @@ Cada nota diária deve conter um bloco de frontmatter YAML no início, delimitad
 energia: 8
 sono: 7
 foco: 9
-humor: calmo e produtivo
+humor: ...
 tensao: baixa
 corpo: leveza muscular, sem dores
 resumo_dia: Dia de foco intenso no projeto principal. Entregas concluídas.
@@ -114,9 +114,9 @@ O script reconhece e extrai os seguintes campos, organizados em três blocos tem
 | `padrao_identificado` | Padrão comportamental ou de resultado observado |
 | `questao_aberta` | Pergunta sem resposta ainda |
 | `diretriz` | Princípio ou regra pessoal registrada |
-| `aviso` | Alerta para si mesmo |
+| `aviso` | Alerta ... |
 | `sincronicidade` | Coincidências ou eventos notáveis |
-| `sonho` | Registro de sonhos |
+| `sonho` | ... |
 | `estetica` | Referências visuais, musicais ou artísticas do dia |
 
 > Campos ausentes em uma nota são incluídos na saída como vazios — garantindo formato consistente em todas as entradas.
