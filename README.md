@@ -21,43 +21,30 @@ Este repositório contém um script Python (`consolida_diario.py`) projetado par
 *   Python 3.x instalado.
 *   Suas notas diárias do Obsidian organizadas em uma estrutura de pastas `YYYY/MM/YYYYMMDD.md` dentro de um diretório base.
 
-### Instalação
-
-1.  Clone este repositório para sua máquina local:
-    ```bash
-    git clone https://github.com/seu-usuario/consolidador-diario-obsidian-python.git
-    cd consolidador-diario-obsidian-python
-    ```
-2.  O script não possui dependências externas além das bibliotecas padrão do Python.
-
 ### Execução
 
-O script é executado via linha de comando e aceita os seguintes argumentos:
+O script é executado via linha de comando e aceita os seguintes argumentos posicionais:
 
 ```bash
-python3 consolida_diario.py <data_inicial> [data_final] [--base-path <caminho>] [--output <arquivo_saida>]
+python3 consolida_diario.py <caminho_base> <arquivo_saida> <data_inicial> [data_final]
 ```
 
 **Argumentos:**
 
+*   `<caminho_base>`: **Obrigatório.** O caminho absoluto para o diretório raiz onde suas notas diárias do Obsidian estão armazenadas (ex: `/home/usuario/Obsidian/Diario`).
+*   `<arquivo_saida>`: **Obrigatório.** O caminho completo e nome do arquivo onde o resultado consolidado será salvo (ex: `~/Downloads/consolidado.txt`).
 *   `<data_inicial>`: **Obrigatório.** A data de início do período a ser consolidado, no formato `YYYYMMDD` (ex: `20260201`).
 *   `[data_final]`: **Opcional.** A data de término do período, também no formato `YYYYMMDD`. Se omitida, o script consolidará as notas da `data_inicial` até a data atual.
-*   `--base-path <caminho>`: **Opcional.** O caminho absoluto para o diretório raiz onde suas notas diárias do Obsidian estão armazenadas. O padrão é `/home/arthur/storage_02/Backup_USB2/Backup_Obsidian/Cofre_02/05-Diario`.
-*   `--output <arquivo_saida>`: **Opcional.** O caminho e nome do arquivo onde o resultado consolidado será salvo. O padrão é `~/Downloads/00-Arquivo-EMM/consolidado_diario.txt`.
 
 **Exemplos:**
 
-*   Consolidar notas de 1º de fevereiro de 2026 até hoje:
+*   Consolidar notas de 1º de fevereiro de 2026 até hoje, usando um caminho base e arquivo de saída específicos:
     ```bash
-    python3 consolida_diario.py 20260201
+    python3 consolida_diario.py "/home/arthur/storage_02/Backup_USB2/Backup_Obsidian/Cofre_02/05-Diario" "~/Downloads/00-Arquivo-EMM/consolidado_diario.txt" 20260201
     ```
-*   Consolidar notas de 1º de fevereiro de 2026 até 10 de fevereiro de 2026:
+*   Consolidar notas de 1º de fevereiro de 2026 até 10 de fevereiro de 2026, usando um caminho base e arquivo de saída específicos:
     ```bash
-    python3 consolida_diario.py 20260201 20260210
-    ```
-*   Consolidar notas de um caminho base diferente e salvar em um arquivo específico:
-    ```bash
-    python3 consolida_diario.py 20260101 20260131 --base-path "/caminho/para/meu/cofre/diario" --output "./consolidado_janeiro.txt"
+    python3 consolida_diario.py "/home/arthur/storage_02/Backup_USB2/Backup_Obsidian/Cofre_02/05-Diario" "./consolidado_fevereiro.txt" 20260201 20260210
     ```
 
 ## Estrutura do Código
@@ -93,7 +80,7 @@ O script é modular e consiste nas seguintes funções principais:
 
 *   **Propósito:** A função principal que orquestra a execução do script.
 *   **Detalhes:**
-    *   Configura o `ArgumentParser` para lidar com os argumentos de linha de comando (`data_inicial`, `data_final`, `--base-path`, `--output`).
+    *   Configura o `ArgumentParser` para lidar com os argumentos de linha de comando (`caminho_base`, `arquivo_saida`, `data_inicial`, `data_final`).
     *   Chama `parse_date` para validar e converter as datas de entrada.
     *   Realiza validações adicionais (data inicial não pode ser posterior à final, caminho base deve existir).
     *   Utiliza `generate_date_range` para obter a lista de datas a processar.
